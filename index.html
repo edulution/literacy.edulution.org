@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<!-- <html ng-app="passProtect"> -->
+
+<head>
+    <!-- password protection module -->
+    <!--Js-->
+    <script src="js/pmodule/jquery.min.js"></script>
+    <script src="js/pmodule/bootstrap.min.js"></script>
+
+    <script src="js/pmodule/angular.min.js"></script>
+    <script src="js/pmodule/angular-animate.js"></script>
+    <script src="js/pmodule/angular-sanitize.js"></script>
+    <script src="js/pmodule/ui-bootstrap-tpls-2.5.0.min.js"></script>
+    <script src="js/pmodule/app.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="js/pmodule/password_modal.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+    <title>Edulution - Literacy Baseline Tests</title>
+</head>
+
+<body ng-controller="MainCtrl as $ctrl">
+    <!-- modal which password protects page -->
+    <script type="text/ng-template" id="testModalContent.html">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modal-title">The Coach should enter the password</h3>
+            </div>
+            <div class="modal-body" id="modal-body">
+                <label class="item item-input">
+                    <input ng-model="password" type="password" class="form-control" id="passwordInput" required>
+                </label>
+                <p class="password-error" ng-show="wrongPassword==true">Sorry, that is not the correct password. Please try again</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-success" type="button" ng-click="$ctrl.checkPassword(password)">OK</button>
+                <button class="btn btn-danger" type="button">Cancel</button>
+            </div>
+    </script>
+    
+    <!-- instantiate modal when page loads -->
+    <span ng-init=$ctrl.openModal()></span>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-centered col-md-10 col-sm-10 col-xs-12 col-lg-10">
+                <h1 class="text-center"><strong>Literacy Baseline Tests</strong></h1>
+                <hr>
+                <br>
+                <div id="imgs_container">
+                    <img class="img-responsive center-block" src="image.png">
+                </div>
+                <br>
+                <table class="table text-center">
+                    <tr>
+                        <th><h4>Course</h4></th>
+                        <th><h4>Section</h4></th>
+                        <th><h4>IXL Level</h4></td>
+                        <th><h4>Tests</h4></td>
+                    </tr>
+                    <tr class="pre_alp_test">
+                        <td>Pre-Alpha</td>
+                        <td>Comprehensive</td>
+                        <td>A,B</td>
+                        <td><a href="https://goo.gl/mYzBYQ">Test 1</a></td>
+                    </tr>
+                    <tr class="alp_test">
+                        <td>Alpha</td>
+                        <td>Comprehensive</td>
+                        <td>C,D,E</td>
+                        <td><span><a href="https://goo.gl/yiJWti">Test 1</a></span> <span><a href="https://goo.gl/EtvaU6">Test 2</a></span></td>
+                    </tr>
+                    <tr class="alp_test">
+                        <td></td>
+                        <td>Section A</td>
+                        <td>C</td>
+                        <td>
+                            <span><a href="https://goo.gl/qtfkwZ">Test 1</a></span>
+                            <span><a href="https://goo.gl/7rdDjP">Test 2</a></span>
+                        </td>
+                    </tr>
+                    <tr class="alp_test">
+                        <td></td>
+                        <td>Section B</td>
+                        <td>D</td>
+                        <td>
+                            <span><a href="https://goo.gl/CZRjB9">Test 1</a></span>
+                            <span><a href="https://goo.gl/P7EWk5">Test 2</a></span>
+                        </td>
+                    </tr>
+                    <tr class="alp_test">
+                        <td></td>
+                        <td>Section C</td>
+                        <td>E</td>
+                        <td>
+                            <span><a href="https://goo.gl/3pTunb">Test 1</a></span>
+                            <span><a href="https://goo.gl/kRMToq">Test 2</a></span>
+                        </td>
+                    </tr>
+                    <tr class="bra_test">
+                        <td>Bravo</td>
+                        <td>Comprehensive</td>
+                        <td>F,G</td>
+                        <td>
+                            <span><a href="">Test 1</a></span>
+                            <span><a href="">Test 2</a></span>
+                        </td>
+                    </tr>
+                    <tr class="bra_test">
+                        <td></td>
+                        <td>Section A</td>
+                        <td>F</td>
+                        <td>
+                            <span><a href="">Test 1</a></span>
+                            <span><a href="">Test 2</a></span>
+                        </td>
+                    </tr>
+                    <tr class="bra_test">
+                        <td></td>
+                        <td>Section B</td>
+                        <td>G</td>
+                        <td>
+                            <span><a href="">Test 1</a></span>
+                            <span><a href="">Test 2</a></span>
+                        </td>
+                    </tr>
+                </table>
+                <br>
+                <br>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
